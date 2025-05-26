@@ -1,0 +1,2 @@
+catkin_simple:protobuf_catkin:test_protobuf_msg:test_pub_sub:test_pub_sub_protobuf
+-DCATKIN_DEVEL_PREFIX=/app/teat_pub_sub_ws/devel -DCMAKE_INSTALL_PREFIX=/app/teat_pub_sub_ws/install -G Unix Makefiles

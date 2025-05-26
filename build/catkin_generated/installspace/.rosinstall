@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /app/teat_pub_sub_ws/install/setup.sh

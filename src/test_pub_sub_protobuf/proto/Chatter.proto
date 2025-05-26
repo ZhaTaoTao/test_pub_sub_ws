@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package test_pub_sub_protobuf;
+
+message Chatter {
+string message = 1;
+int32 count = 2;
+}

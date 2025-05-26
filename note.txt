@@ -1,0 +1,48 @@
+这个容器是通过以下命令建立的，主要用来验证 ros-protobuf 项目是否可行
+
+命令：
+docker run -it --name ros_protobuf_container \
+  -v /mnt/F/zt_docker/ros_protobuf:/app \
+  ubuntu:20.04 /bin/bash
+
+
+
+source /opt/ros/noetic/setup.bash
+source ./devel/setup.bash
+
+进入工作空间
+cd src
+catkin_create_pkg test_pub_sub roscpp rospy std_msgs
+
+要在这个容器的终端内启动 roscore
+
+# 检测原生的发布订阅是否正常
+rosrun test_pub_sub publisher_node
+rosrun test_pub_sub subscriber_node
+
+
+
+--------------------------------------------------------------------------------------
+
+进入工作空间
+cd src
+catkin_create_pkg test_pub_sub_protobuf roscpp rospy std_msgs message_generation
+
+# 检测 protobuf 是否成功嵌入
+rosrun test_pub_sub_protobuf publisher_node_proto
+rosrun test_pub_sub_protobuf subscriber_node_proto
+
+
+--------------------------------------------------------------------------------------
+
+# 先启动订阅节点再启动发布节点，用于比较性能
+rosrun test_protobuf_msg proto_subscriber
+rosrun test_protobuf_msg proto_publisher
+
+rosrun test_protobuf_msg ros_subscriber
+rosrun test_protobuf_msg ros_publisher
+
+
+
+
+

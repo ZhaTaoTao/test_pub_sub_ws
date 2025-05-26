@@ -1,0 +1,8 @@
+prefix=/app/teat_pub_sub_ws/install
+
+Name: test_protobuf_msg
+Description: Description of test_protobuf_msg
+Version: 0.0.1
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lproto_lib_msg
+Requires: roscpp std_msgs message_runtime

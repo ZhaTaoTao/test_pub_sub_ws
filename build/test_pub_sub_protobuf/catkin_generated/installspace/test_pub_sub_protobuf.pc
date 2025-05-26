@@ -1,0 +1,8 @@
+prefix=/app/teat_pub_sub_ws/install
+
+Name: test_pub_sub_protobuf
+Description: Description of test_pub_sub_protobuf
+Version: 0.0.1
+Cflags: -I${prefix}/include -I/opt/ros/noetic/include
+Libs: -L${prefix}/lib -lproto_lib
+Requires: roscpp std_msgs message_runtime
